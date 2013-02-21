@@ -10,8 +10,16 @@ end
   end
 end
 
-# TODO: Proper service procedures
-# TODO: Parametric IP address
-execute "start" do
-  command "deltacloudd -i mock -r 33.33.33.10 &"
+service "deltacloud" do
+  supports :restart => true, :start => true, :stop => true
+end
+
+template "deltacloud" do
+  path "/etc/init.d/deltacloud"
+  source "deltacloud.erb"
+  owner "root"
+  group "root"
+  mode "0755"
+  notifies :enable, "service[deltacloud]"
+  notifies :start, "service[deltacloud]"
 end

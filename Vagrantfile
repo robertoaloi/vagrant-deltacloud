@@ -14,8 +14,18 @@ Vagrant::Config.run do |config|
 
     chef.cookbooks_path = "cookbooks"
 
+    chef.json = {
+        "deltacloud" => {
+            "hostname" => "33.33.33.10",
+            "port"     => 3001,
+            "driver"   => "mock"
+        }
+    }
+
     chef.add_recipe("apt")
     chef.add_recipe("deltacloud")
+
+    # chef.log_level = :debug
 
   end
 
