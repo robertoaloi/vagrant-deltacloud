@@ -1,0 +1,11 @@
+--- deltacloud-core.gemspec	2013-04-10 13:12:17.219494869 +0200
++++ deltacloud-core.gemspec	2013-04-10 13:16:12.064562947 +0200
+@@ -107,7 +107,7 @@
+   s.add_dependency('cloudfiles')
+
+   # Terremark Vcloud Express
+-  s.add_dependency('fog', '>= 1.4.0')
++  s.add_dependency('fog', '>= 1.4.0', '<= 1.10.0')
+   s.add_dependency('excon', '>= 0.14.2', '<0.17.0' )
+
+   # Rhevm and Condor Cloud
