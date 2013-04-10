@@ -18,7 +18,8 @@ Vagrant::Config.run do |config|
         "deltacloud" => {
             "hostname" => "33.33.33.10",
             "port"     => 3001,
-            "driver"   => "mock"
+            "driver"   => "mock",
+            "logfile"  => "daemon.log"
         }
     }
 

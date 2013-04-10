@@ -15,6 +15,7 @@ NAME=deltacloudd
 DAEMON=/opt/vagrant_ruby/bin/$NAME
 DAEMON_ARGS="-i <%= node[:deltacloud][:driver] %> \
   -r <%= node[:deltacloud][:hostname] %> \
+  -v -L /vagrant/<%= node[:deltacloud][:logfile] %> \
   -p <%= node[:deltacloud][:port] %>"
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
