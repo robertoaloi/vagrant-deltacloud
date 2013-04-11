@@ -12,7 +12,7 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Deltacloud service"
 NAME=deltacloudd
-DAEMON=/opt/vagrant_ruby/bin/$NAME
+DAEMON=<%= node[:deltacloud][:bin_path] %>/$NAME
 DAEMON_ARGS="-i <%= node[:deltacloud][:driver] %> \
   -r <%= node[:deltacloud][:hostname] %> \
   -v -L /vagrant/<%= node[:deltacloud][:logfile] %> \
