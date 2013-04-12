@@ -18,6 +18,7 @@ $dc_tgz = "#{$CWD}/dc.tar.gz"
 remote_file $dc_tgz do
     source  $dc_src_url
     mode 00644
+    not_if { ::File.exists? $dc_tgz }
 end
 
 bash "patch and install deltacloud" do
@@ -30,6 +31,7 @@ bash "patch and install deltacloud" do
         gem build deltacloud-core.gemspec
         gem install --no-rdoc --no-ri deltacloud-core-#{$DC_VER}.gem
     EOF
+    not_if "which deltacloudd >/dev/null 2>&1"
 end
 
 service "deltacloud" do
