@@ -1,8 +1,8 @@
 Vagrant::Config.run do |config|
 
-  # Use lucid32 box from Vagrant
-  config.vm.box = "lucid32"
-  config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+  # Use precise64 box from Vagrant
+  config.vm.box = "precise64"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # Port forwarding (port 22 forwarded by default to 2222)
   config.vm.forward_port 3001, 3001
@@ -18,7 +18,9 @@ Vagrant::Config.run do |config|
         "deltacloud" => {
             "hostname" => "33.33.33.10",
             "port"     => 3001,
-            "driver"   => "mock"
+            "driver"   => "mock",
+            "logfile"  => "daemon.log",
+            "bin_path" => "/usr/local/bin"
         }
     }
 
