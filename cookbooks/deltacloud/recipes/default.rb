@@ -11,7 +11,7 @@ end
 end
 
 $DC_VER = '1.1.2'
-$dc_src_url = "http://xenia.sote.hu/ftp/mirrors/www.apache.org/deltacloud/stable/deltacloud-core-#{$DC_VER}.tgz"
+$dc_src_url = "http://archive.apache.org/dist/deltacloud/#{$DC_VER}/deltacloud-core-#{$DC_VER}.tgz"
 $CWD = "/home/vagrant"
 $dc_tgz = "#{$CWD}/dc.tar.gz"
 
